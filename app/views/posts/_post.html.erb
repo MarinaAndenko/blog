@@ -1,0 +1,17 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1 class="panel-title heading"><%= post.name %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="text">
+    	<%= post.description %>
+    </div>
+  </div>
+  <div class="panel-footer">
+  	<%= link_to 'Show', post, class: "btn btn-primary btn-sm" %> 
+	<% if current_user == post.user %>
+		<%= link_to 'Edit', edit_post_path(post), class: "btn btn-info btn-sm" %>
+		<%= link_to 'Destroy', post, method: :delete, remote: true, id: "post-delete", class: "btn btn-default btn-sm" %>
+	<% end %>
+  </div>
+</div>

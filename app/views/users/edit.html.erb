@@ -1,0 +1,18 @@
+<%= form_for @user, html: { multipart: true }, url: user_path do |f| %>
+	<br><br>
+	<div>
+		<label>Upload the photo to your profile: </label>
+		<%= f.file_field :avatar, value: "Choose a file", class: "fileinput"  %>
+	</div>
+	<br>
+	<div class = "image-size" >
+	<div class = "image-field-ed">
+		<%= image_tag @user.avatar.url(:post_avatar), alt: "" %>
+		<% if @user.avatar.url %> 
+	    <label>Delete photo:</label><%= check_box_tag("remove_avatar", true)%>
+	  <% end %>
+	</div>
+	</div>
+	<br>
+	<div><%= f.submit "Save", class: "btn btn-primary" %></div>
+<% end %>

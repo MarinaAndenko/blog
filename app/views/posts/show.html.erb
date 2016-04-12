@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1 class="panel-title heading"><%= @post.name %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="date">
+        Posted <span class="badge attributes"><%= @post.created_at.strftime("%d %b. %Y at %H:%M") %></span>
+    </div>
+  	<div class="author">
+       Author <span class="badge attributes"><%= @post.user.username.capitalize %></span>
+    </div>
+    <br><br>
+    <div class = "image-field">
+      <%= image_tag @post.user.avatar_url(:post_avatar), alt: "" %>
+    </div>
+    <div class="post-text">
+    	<%= @post.text %>
+    </div>
+    <br>
+  </div>
+  <div class="panel-footer">
+  	<% if current_user == @post.user %>
+  		<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info"%>
+	<% end %>
+	<%= link_to 'Back', posts_path, class: "btn btn-default" %>
+  </div>
+</div>
+<p class= "comments">Comments:</p>
+<div id = "comment-form">
+  <%= render partial: 'comments/comment_form', locals: {commentable: @post} %>
+</div>
+<div id = "comments-list">
+  <%= render @comments %>
+</div>

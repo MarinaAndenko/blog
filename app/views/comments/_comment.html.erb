@@ -1,0 +1,10 @@
+<div id = "comment-this">
+	<% if comment.id !=nil %>
+	<div>
+		<%= render partial: "comments/comment_main", locals: {comment: comment} %>
+	</div>
+		<div id = "child" class = "comment-child" >
+			<%= render comment.comments %>
+		</div>
+	<% end %>	
+</div>

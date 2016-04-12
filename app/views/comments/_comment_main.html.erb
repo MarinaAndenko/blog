@@ -1,0 +1,25 @@
+		<div id = "comment" class="panel panel-default">
+	    <div class="panel-body">
+	    	<div class="date">
+		  		Answered <span class="badge"><%= comment.created_at.strftime("%d %b. %Y at %H:%M ") %></span>
+	    	</div>
+			  <div class="author">
+		  		Author <span class="badge"><%= comment.user.username.capitalize %></span>
+		    </div>
+		    <br><br>
+		    <div class = "image-field">
+		      <%= image_tag comment.user.avatar_url(:comment_avatar), alt: "" %>
+		    </div>
+		    <div  class = "comment-text" >
+		    	<%=  comment.text %>
+		    </div>
+		    <br>
+		  </div>
+		  <div class="panel-footer">
+		  	<%= link_to 'Reply', new_comment_path(comment, comment_id: comment.id), id: "comment-reply", class: "btn btn-success btn-xs", remote: true %>
+			<% if current_user == comment.user %> 
+			<%= link_to 'Edit', edit_route(comment), id: "comment-edit", class: "btn btn-info btn-xs", remote: true %> 
+			<%= link_to 'Delete', delete_route(comment), method: :delete, id: "comment-delete", class: "btn btn-default btn-xs", remote: true %>
+			<% end %>
+		  </div>
+		</div>

@@ -1,0 +1,90 @@
+//=require twitter-bootstrap-static/bootstrap
+.btn {
+    color:  white !important;
+}
+.field {
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top: 13%;
+}
+.heading {
+	text-align: center;
+	font-size: 24pt;
+}
+.btn-default {
+    color:  black !important;
+}
+.comment-child {
+	position: relative;
+	width: 95%;
+	left: 5%;
+}
+.date {
+	float: left;
+}
+.author {
+	float: right;
+}
+.text {
+	font-size: 14pt;
+}
+.post-text {
+	font-size: 14pt;
+	position: relative;
+	width: 80%;
+}
+.comment-text {
+	font-size: 12pt;
+	position: relative;
+	width: 80%;
+}
+.comments {
+	font-size: 14pt;
+	font-weight: bold;
+
+}
+.attributes
+{
+	font-size: 10pt !important;
+	background: #1e90ff !important;
+}
+.button-center {
+	text-align: center;
+}
+.points {
+	font-size: 14pt;
+}
+.field-center
+{
+	position: absolute;
+	width: 40%;
+	left: 30%;
+	top: 25%;
+}
+.forgot
+{
+	position: relative;
+	float: right;
+}
+.forgot-text
+{
+	color: blue !important ;
+}
+.forgot-text:hover
+{
+	color: black !important ;
+	background-color: white !important;
+}
+a {
+	text-decoration: none !important;
+}
+.image-size {
+	position: relative;
+	width: 50%;
+}
+.image-field
+{
+	position: relative;
+	float: right;
+}

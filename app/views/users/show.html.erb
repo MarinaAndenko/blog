@@ -1,0 +1,5 @@
+<div class="jumbotron">
+  <h1>Hello, <%=@user.username.capitalize%></h1>
+  <p>If you want others to see how great you are, you can upload your photo by clicking this button!</p>
+  <p><%= link_to "Upload Avatar", edit_user_path(@user), class:"btn btn-primary btn-lg" %></p>
+</div>
